@@ -4,7 +4,7 @@
 {# replyToEmail: {{ craft.app.systemSettings.getSettings('email').fromEmail }} #}
 {# includeAttachments: true #}
 {# description: Contact us email notification template. #}
-{% extends "_/layouts/_email-layout.html" %}
+{% extends "_email-layout.html" %}
 {% block content %}
 <p style="text-transform: uppercase; font-family: 'Josefin Sans', sans-serif;">A user has submitted the contact form</p>
 <p>Submission came in on {{ dateCreated|date('l, F j, Y \\a\\t g:ia') }}.</p>
