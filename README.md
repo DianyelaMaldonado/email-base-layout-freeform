@@ -32,7 +32,7 @@ You will find the email layout and the example FreeForm template within `templat
 
 - Go to your Express form in `/admin/freeform/forms` to configure your form notification template.
 - Click on your form name.
-- At the top/right corner, click in the **Admin Notification** (envelop icon) and select the example **Contact Us** template.
+- At the top/right corner, click in the **Admin Notification** (![alt text](https://github.com/DianyelaMaldonado/email-base-layout-freeform/blob/development/src/screenshots/envelop-icon.png?raw=true) icon) and select the example **Contact Us** template.
 
 ![alt text](https://github.com/DianyelaMaldonado/email-base-layout-freeform/blob/development/src/screenshots/admin-notification-select.png?raw=true)
 
