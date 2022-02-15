@@ -36,6 +36,10 @@ You will find the email layout and the example FreeForm template within `templat
 
 ![alt text](https://github.com/DianyelaMaldonado/email-base-layout-freeform/blob/development/src/screenshots/admin-notification-select.png?raw=true)
 
+Don't forget to set up the admin recipients email addresses in the textarea below. It is recommended to use internal testing email addresses for testing purposes, your personal/blackmagic emails would be fine. NOTE: ON PROCUCTION ENVIRONMENT THESE EMAIL ADDRESSES WILL BE REPLACED WITH THE ONES OF THE CLIENT:
+
+![alt text](https://github.com/DianyelaMaldonado/email-base-layout-freeform/blob/development/src/screenshots/testing-emails.png?raw=true)
+
 ### Template customization:
 
 The email layout is ready to be customized through the CMS, **THIS IS NOT MANDATORY** but it would be more magical if you use it like this 🦯🎩✨
