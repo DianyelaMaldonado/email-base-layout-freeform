@@ -24,7 +24,7 @@ You will find the email layout and the example FreeForm template within `templat
 - Place the `email-templates` directory inside your templates directory. **NOTE: Is not mandatory to place it in the root of `templates` directory. You can place it inside a subdirectory as well, it is up to you. Just remember, if you place this in a different location, you will need to replace the extends path in the `_email-layout.html` template: `{% extends "_email-layout.html" %}`**
 - Place the `_email-layout.html` file inside your templates directory. It is recommended that `email-templates` directory and `_email-layout.html` file to be at the same level, if this template is not sibling of `email-templates` directory, you will need to replace the extends path (line 7) with the correct one.
 - Go to `/admin/freeform/settings/email-templates` to set up the templates path.
-- Type `email-templates` as the template directory path. If you placed the email-templates directory in a different location you will need to fill the field with the correct location according to your templates structure.
+- Type `email-templates` as the template directory path. If you placed the `email-templates` directory in a different location you will need to fill the field with the correct location according to your templates structure.
 - Click `Save`.
 - The example **Contact Us** template will be shown below.
 
