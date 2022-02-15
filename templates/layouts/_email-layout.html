@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{{ siteName }}</title>
+
+		<!--[if mso]>
+		<style type="text/css">
+			body,
+			table,
+			td {
+				font-family: Arial, Helvetica, sans-serif !important;
+			}
+		</style>
+		<![endif]-->
+
+		<!--[if gte mso 9]>
+		<xml>
+			<o:OfficeDocumentSettings>
+			<o:AllowPNG/>
+			<o:PixelsPerInch>96</o:PixelsPerInch>
+			</o:OfficeDocumentSettings>
+		</xml>
+		<![endif]-->
+
+		<style data-embed>
+			/**
+			 * 1. Removing auto-generated blue links on Apple devices.
+			 *    More info: http://removebluelinks.com
+			 * 2. Force Outlook to provide a "View in browser" menu link.
+			 * 3. Yahoo! Mail has a knack for picking keywords in emails and linking them to
+			 *    advertising popups (blue, dotted links). This is how we remove them.
+			 * 4. Force Hotmail to display normal line spacing.
+			 *    More info: http://www.emailonacid.com/forum/viewthread/43
+			 * 5. Force Hotmail to display emails at full width.
+			 */
+
+			a[x-apple-data-detectors] {
+				/* 1 */
+				color: inherit !important;
+				text-decoration: none !important;
+				font-size: inherit !important;
+				font-family: inherit !important;
+				font-weight: inherit !important;
+				line-height: inherit !important;
+			}
+
+			#outlook a {
+				padding: 0; /* 2 */
+			}
+
+			.yshortcuts a {
+				border-bottom: none !important; /* 3 */
+			}
+
+			.ExternalClass {
+				line-height: 100%; /* 4 */
+			}
+
+			.ExternalClass,
+			.ExternalClass p,
+			.ExternalClass span,
+			.ExternalClass font,
+			.ExternalClass td,
+			.ExternalClass div {
+				width: 100%; /* 5 */
+			}
+            #email-body {
+                font-family: "Montserrat", Verdana, Arial, sans-serif;
+            }
+		</style>
+		<style type="text/css">
+            @media only screen and (max-width: 480px){
+                .fsm-16 {
+                    font-size: 16px !important;
+                }
+            }
+        </style>
+	</head>
+	<body>
+        {% set emailData = craft.app.globals.getSetByHandle('emailLayout') %}
+        {% set emailLogo =  emailData.logo is defined and emailData.logo|length ? emailData.logo.one().url : false  %}
+        {% set headerBg = emailData.headerBgColor is defined and emailData.headerBgColor ? emailData.headerBgColor : "#252525" %}
+        {% set bodyBg = emailData.bodyBgColor is defined and  emailData.bodyBgColor ?  emailData.bodyBgColor : "#F7F5E9" %}
+        {% set footerBg = emailData.footerBgColor is defined and emailData.footerBgColor ? emailData.footerBgColor : "#252525" %}
+
+		<table class="main-wrapper" width="100%" border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td class="main-wrapper__inner" align="center" valign="top">
+					<table class="container bg-white" width="660" align="center" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td id="email-body" class="column-12 is-first is-last">
+								<table width="100%">
+                                    <tr> <!-- Header -->
+                                        <td style="background-color: {{ headerBg }}; text-align: center; padding: 10px 0;">
+                                            {% if emailLogo %}
+                                                <a href="{{ siteUrl }}">
+                                                    <img width="120" style="height: auto;width:120px;border:0;" src="{{ siteUrl|slice(0,-1) }}{{ emailLogo }}" alt="{{ siteName }} Logo" />
+                                                </a>
+                                            {% endif %}
+                                        </td>
+                                    </tr> <!-- / Header -->
+                                    <tr> <!-- Email content -->
+                                        <td align="center" bgcolor="{{bodyBg}}" valign="top" style="padding: 20px">
+                                            {% block content %}{% endblock %}
+                                        </td>
+                                    </tr> <!-- / Email content -->
+                                    <tr>
+                                        <td>
+											<table align="center" bgcolor="{{ footerBg }}" width="100%" style="background-color: {{ footerBg }}; width: 100%; padding: 10px 0; min-width: 100%; line-height: 14px;" cellspacing="0" cellpadding="0">
+												<tr>
+													<td style="text-align: center;">
+														<a style="text-decoration: none; color: #ffffff;" href="{{ siteUrl }}">{{ siteName }}</a>
+													</td>
+												</tr>
+											</table>
+                                        </td>
+                                    </tr>
+                                </table>
+							</td><!-- /.column -->
+						</tr>
+					</table><!-- /.container -->
+				</td><!-- /.main-wrapper__inner -->
+			</tr>
+		</table><!-- /.main-wrapper -->
+	</body>
+</html>
