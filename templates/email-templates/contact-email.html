@@ -1,9 +1,23 @@
+{# use with  CRAFT 3  #}
+{# If you use this version, delete lines 11 through 19 and save #}
+
 {# subject: New submission from your {{ form.name }} form #}
 {# fromEmail: {{ craft.app.systemSettings.getSettings('email').fromEmail }} #}
 {# fromName: {{ craft.app.systemSettings.getSettings('email').fromName }} #}
 {# replyToEmail: {{ craft.app.systemSettings.getSettings('email').fromEmail }} #}
 {# includeAttachments: true #}
 {# description: Contact us email notification template. #}
+
+{# Use with CRAFT 4  #}
+{# If you use this version, delete lines 1 through 8 and save #}
+
+{# subject: New submission from your {{ form.name }} form #}
+{# fromEmail: {{craft.app.projectConfig.get('email.fromEmail') }} #}
+{# fromName: {{craft.app.projectConfig.get('email.fromName') }} #}
+{# replyToEmail: {{craft.app.projectConfig.get('email.fromEmail') }} #}
+{# includeAttachments: true #}
+{# description: Contact us email notification template. #}
+
 {% extends "_email-layout.html" %}
 {% block content %}
 <p style="text-transform: uppercase; font-family: 'Josefin Sans', sans-serif;">A user has submitted the contact form</p>
