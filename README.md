@@ -1,5 +1,5 @@
 # Email Base Layout [Free Form] ✨
-[![N|Solid](https://github.com/DianyelaMaldonado/email-base-layout-freeform/blob/development/src/assets/BM-logo.png?raw=true)](https://heyblackmagic.com/)
+[![N|Solid](https://raw.githubusercontent.com/DianyelaMaldonado/email-base-layout-freeform/refs/heads/main/src/assets/BM-logo.png)
 
 Re-usable email template fully tested in:
 
